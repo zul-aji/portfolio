@@ -3,12 +3,12 @@ import { Timeline } from "@/blocks/Components/Timeline";
 export function TimelineData() {
   const data = [
     {
-      title: "2024",
+      title: "Oct 2024 - Present",
       content: (
         <div>
-          <p className="mb-8 text-xs font-normal text-white md:text-sm">
-            Built and launched Aceternity UI and Aceternity UI Pro from scratch
-          </p>
+          <h1 className="mb-8 font-normal text-white md:text-2xl text-xl xl:text-2xl">
+            Invencio Creative Tech
+          </h1>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/templates/startup-1.webp"
@@ -43,7 +43,7 @@ export function TimelineData() {
       ),
     },
     {
-      title: "Early 2023",
+      title: "Oct 2023 - Oct 2024",
       content: (
         <div>
           <p className="mb-8 text-xs font-normal text-white md:text-sm">
@@ -54,63 +54,6 @@ export function TimelineData() {
             Lorem ipsum is for people who are too lazy to write copy. But we are
             not. Here are some more example of beautiful designs I built.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://assets.aceternity.com/pro/hero-sections.png"
-              alt="hero template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/features-section.png"
-              alt="feature template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/pro/bento-grids.png"
-              alt="bento template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-            <img
-              src="https://assets.aceternity.com/cards.png"
-              alt="cards template"
-              width={500}
-              height={500}
-              className="h-20 w-full rounded-lg object-cover shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] md:h-44 lg:h-60"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      title: "Changelog",
-      content: (
-        <div>
-          <p className="mb-4 text-xs font-normal text-white md:text-sm">
-            Deployed 5 new components on Aceternity today
-          </p>
-          <div className="mb-8">
-            <div className="flex items-center gap-2 text-xs text-white md:text-sm">
-              ✅ Card grid component
-            </div>
-            <div className="flex items-center gap-2 text-xs text-white md:text-sm">
-              ✅ Startup template Aceternity
-            </div>
-            <div className="flex items-center gap-2 text-xs text-white md:text-sm">
-              ✅ Random file upload lol
-            </div>
-            <div className="flex items-center gap-2 text-xs text-white md:text-sm">
-              ✅ Himesh Reshammiya Music CD
-            </div>
-            <div className="flex items-center gap-2 text-xs text-white md:text-sm">
-              ✅ Salman Bhai Fan Club registrations open
-            </div>
-          </div>
           <div className="grid grid-cols-2 gap-4">
             <img
               src="https://assets.aceternity.com/pro/hero-sections.png"

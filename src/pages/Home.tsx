@@ -7,7 +7,7 @@ function Home () {
     const [active, setActive] = useState(0);
     const navItems = [
         'About',
-        'Work',
+        'Experience',
         'Projects'
     ];
     const bottomLinks = [
@@ -54,7 +54,7 @@ function Home () {
                         <button
                             key={item}
                             onClick={() => handleNavClick(idx)}
-                            className={`text-sm md:text-lg transition-colors font-medium focus:outline-none bg-transparent border-none shadow-none p-0 m-0 text-white hover:text-[#88ccb4] flex items-center`}
+                            className={`text-sm md:text-lg lg:text-2xl transition-colors font-medium focus:outline-none bg-transparent border-none shadow-none p-0 m-0 text-white hover:text-[#88ccb4] flex items-center`}
                             style={{ background: 'none', border: 'none', boxShadow: 'none' }}
                         >
                             <span
@@ -78,7 +78,7 @@ function Home () {
                             href={item.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-300 hover:text-[#88ccb4] transition-colors text-sm md:text-base group"
+                            className="text-gray-300 hover:text-[#88ccb4] transition-colors text-sm md:text-base lg:text-xl group"
                         >
                             {item.label.slice(0, -1)}
                             <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
