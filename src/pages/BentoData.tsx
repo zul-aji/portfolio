@@ -19,7 +19,6 @@ export function BentoData() {
           description={item.description}
           header={item.header}
           icon={item.icon}
-          className={i === 3 || i === 6 ? "md:col-span-2" : ""}
         />
       ))}
     </BentoGrid>

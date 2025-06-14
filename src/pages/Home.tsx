@@ -198,13 +198,23 @@ function Home () {
                 </div>
 
                 {/* Experience section - full page */}
-                <div ref={expRef} className="min-h-screen h-screen">
-                    <TimelineData/>
+                <div
+                    ref={expRef}
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pb-24"
+                >
+                    <div className="w-full max-w-6xl">
+                        <TimelineData />
+                    </div>
                 </div>
 
-                {/* Project section - full page */}
-                <div ref={projectRef} className="min-h-screen h-screen">
-                    <BentoData/>
+                {/* Projects section - full page */}
+                <div
+                    ref={projectRef}
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pb-24"
+                >
+                    <div className="w-full max-w-6xl">
+                        <BentoData />
+                    </div>
                 </div>
             </div>
         </div>

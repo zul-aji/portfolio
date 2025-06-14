@@ -15,24 +15,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full font-sans"
       ref={containerRef}
     >
-
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
+      <div ref={ref} className="relative mx-auto">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-30 md:gap-5"
+            className="flex flex-col md:flex-row justify-start pt-8 md:pt-16 gap-2 md:gap-5"
           >
-            <div className="sticky flex flex-col md:flex-row font-['Plus_Jakarta_Sans'] mb-4 pl-3 md:pl-0 z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <h3 className="hidden md:block pt-1 text-xl md:pl-2 md:text-3xl font-bold text-[#88ccb4] ">
+            <div className="sticky flex flex-col md:flex-row font-['Plus_Jakarta_Sans'] mb-2 md:mb-4 pl-3 md:pl-0 z-40 items-start md:items-center top-20 self-start max-w-xs lg:max-w-sm md:w-full">
+              <h3 className="hidden md:block text-xl md:text-2xl lg:text-3xl font-bold text-[#88ccb4]">
                 {item.title}
               </h3>
             </div>
 
-            <div className="relative pl-10 pr-4 font-['Plus_Jakarta_Sans'] md:pt-2 md:pl-4 w-full">
+            <div className="relative pl-4 md:pl-6 pr-2 md:pr-4 font-['Plus_Jakarta_Sans'] w-full">
               <h3 className="pb-1 md:hidden block text-base text-left font-semibold text-[#88ccb4]">
                 {item.title}
               </h3>
-              {item.content}{" "}
+              {item.content}
             </div>
           </div>
         ))}

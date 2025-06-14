@@ -25,14 +25,14 @@ export function TimelineData() {
             <span className="text-base font-normal italic">- Android Application Developer</span>
           </h1>
           <p className="mb-4 text-sm font-semibold text-gray-300 md:text-xl">
-            Built/maintained Flutter Android apps with Laravel backend integration for seamless data flow/auth. Partnered with 15-member cross-functional teams to deliver 7+ features, boosting engagement. Enhanced performance via 30+ code reviews & debugging—achieved 30% better stability and 20% faster load times.
+            Built and maintained Flutter Android app with Laravel backend integration for seamless data flow and authentication. Partnered with 15-member cross-functional teams to deliver 7+ features, boosting engagement.
           </p>
         </div>
       ),
     },
   ];
   return (
-    <div className="relative w-full overflow-clip">
+    <div className="w-full min-h-full">
       <Timeline data={data} />
     </div>
   );
