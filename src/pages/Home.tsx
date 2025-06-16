@@ -3,6 +3,7 @@ import Dither from "../blocks/Backgrounds/Dither/Dither";
 import ScrollVelocity from "../blocks/TextAnimations/ScrollVelocity/ScrollVelocity";
 import { TimelineData } from "./TimelineData";
 import { BentoData } from "./BentoData";
+import { MorphingDialogBasicOne } from "./MorphingData";
 
 function Home () {
     const [active, setActive] = useState(0);
@@ -212,8 +213,8 @@ function Home () {
                     ref={projectRef}
                     className="flex flex-col items-center justify-start min-h-screen shrink-0 pb-24"
                 >
-                    <div className="w-full max-w-6xl">
-                        <BentoData />
+                    <div>
+                        <MorphingDialogBasicOne/>
                     </div>
                 </div>
             </div>
