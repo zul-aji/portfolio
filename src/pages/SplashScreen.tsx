@@ -42,7 +42,7 @@ export default function SplashScreen({ onLoadingComplete }: SplashScreenProps) {
                         repeat: Infinity,
                     }}
                 >
-                    Hello there
+                    Hello there!
                 </motion.h1>
             </motion.div>
         </motion.div>

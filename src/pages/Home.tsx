@@ -36,7 +36,7 @@ function Home () {
                 });
             },
             {
-                threshold: 0.5,
+                threshold: 0.65,
             }
         );
 
@@ -168,10 +168,10 @@ function Home () {
                 {/* Projects section - full page */}
                 <div
                     ref={projectRef}
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-25"
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-33"
                     data-section="projects"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto px-6 md:px-10">
                         {projectsData.map((project, index) => (
                             <ProjectsContainer
                             key={index}

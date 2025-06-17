@@ -9,7 +9,6 @@ import {
     MorphingDialogDescription, 
     MorphingDialogClose 
 } from '@/blocks/Components/MorphingDialog';
-import { PlusIcon } from 'lucide-react';
 
 export interface ProjectData {
   title: string;
@@ -22,70 +21,71 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    title: "EB27",
-    subtitle: "Edouard Wilfrid Buquet",
+    title: "AngkasApp",
+    subtitle: "An android application for navigation in Soekarno-Hatta Airport",
     description: [
-      "Little is known about the life of Édouard-Wilfrid Buquet...",
-      "Research conducted in the 1970s revealed that he'd designed...",
+      "This academic project, developed for my bachelor’s thesis, aims to simplify navigation for travelers passing through Soekarno-Hatta Airport. Airports can often be confusing, so the app provides step-by-step guidance with a zoomable map and directional lines. Users can select their starting point and destination, or simply pick a location to see its position on the map.",
+      "The app also includes real-time lists of departing and arriving flights. Travelers can search for flights using IATA codes and set reminders for departures or arrivals, helping them stay informed about their travel plans.",
+      "Built with Flutter and Dart, the app integrates the AirLabs API for flight data and features custom airport maps with pathfinding powered by the A* algorithm. For local data storage, such as saved flights and reminders, the app uses Hive.",
     ],
     image: "/eb-27-lamp-edouard-wilfrid-buquet.jpg",
-    link: "https://www.are.na/block/12759029",
-    linkHeader: "Github↗"
+    link: "https://github.com/zul-aji/AngkasApp",
+    linkHeader: "Github Repo↗"
   },
   {
-    title: "EB27",
-    subtitle: "Edouard Wilfrid Buquet",
+    title: "YouMart",
+    subtitle: "An android application for a local convenience store in Malaysia",
     description: [
       "Little is known about the life of Édouard-Wilfrid Buquet...",
       "Research conducted in the 1970s revealed that he'd designed...",
     ],
     image: "/eb-27-lamp-edouard-wilfrid-buquet.jpg",
-    link: "https://www.are.na/block/12759029",
-    linkHeader: "Github↗"
+    link: "https://github.com/zul-aji/youmart_mobitech",
+    linkHeader: "Github Repo↗"
   },
   {
-    title: "EB27",
-    subtitle: "Edouard Wilfrid Buquet",
+    title: "Movie Catalog",
+    subtitle: "A Movie Catalog Application with Kotlin",
     description: [
       "Little is known about the life of Édouard-Wilfrid Buquet...",
       "Research conducted in the 1970s revealed that he'd designed...",
     ],
     image: "/eb-27-lamp-edouard-wilfrid-buquet.jpg",
-    link: "https://www.are.na/block/12759029",
-    linkHeader: "Github↗"
+    link: "https://github.com/zul-aji/Movie-Catalog",
+    linkHeader: "Github Repo↗"
   },
   {
-    title: "EB27",
-    subtitle: "Edouard Wilfrid Buquet",
+    title: "TSU Educational Portal",
+    subtitle: "TSU Educational Portal Android Application",
     description: [
       "Little is known about the life of Édouard-Wilfrid Buquet...",
       "Research conducted in the 1970s revealed that he'd designed...",
     ],
     image: "/eb-27-lamp-edouard-wilfrid-buquet.jpg",
-    link: "https://www.are.na/block/12759029",
-    linkHeader: "Github↗"
+    link: "https://github.com/zul-aji/TSU-Educational-Portal",
+    linkHeader: "Github Repo↗"
   },
   {
-    title: "EB27",
-    subtitle: "Edouard Wilfrid Buquet",
+    title: " Medical Information System",
+    subtitle: "Medical Information System API using .Net",
     description: [
       "Little is known about the life of Édouard-Wilfrid Buquet...",
       "Research conducted in the 1970s revealed that he'd designed...",
     ],
     image: "/eb-27-lamp-edouard-wilfrid-buquet.jpg",
-    link: "https://www.are.na/block/12759029",
-    linkHeader: "Github↗"
+    link: "https://github.com/zul-aji/Medical-Information-System-API",
+    linkHeader: "Github Repo↗"
   },
   {
-    title: "EB27",
-    subtitle: "Edouard Wilfrid Buquet",
+    title: "Food Delivery System",
+    subtitle: "Food Delivery System API using .Net",
     description: [
       "Little is known about the life of Édouard-Wilfrid Buquet...",
       "Research conducted in the 1970s revealed that he'd designed...",
     ],
     image: "/eb-27-lamp-edouard-wilfrid-buquet.jpg",
-    link: "https://www.are.na/block/12759029",
-    linkHeader: "Github↗"
+    link: "https://github.com/zul-aji/Food-Delivery-API",
+    linkHeader: "Github Repo↗"
   },
 ];
 
@@ -109,29 +109,22 @@ export function ProjectsContainer({
         style={{
           borderRadius: '12px',
         }}
-        className='flex max-w-[350px] md:max-w-[450px] flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
+        className='flex max-w-[380px] md:max-w-[400px] flex-col overflow-hidden bg-gray-300/20 backdrop-blur-xl'
       >
         <MorphingDialogImage
           src={image}
           alt={`${title} by ${subtitle}`}
           className='h-58 w-full object-cover'
         />
-        <div className='flex grow flex-row items-start justify-between px-3 py-2'>
-          <div>
-            <MorphingDialogTitle className='text-zinc-950 dark:text-zinc-50'>
-              EB27
+        <div className='flex grow flex-row items-center justify-center px-3 pb-5'>
+          <div className='items-start'>
+            <MorphingDialogTitle className='text-white font-semibold'>
+              {title}
             </MorphingDialogTitle>
-            <MorphingDialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
-              Edouard Wilfrid Buquet
+            <MorphingDialogSubtitle className='text-gray-300'>
+              {subtitle}
             </MorphingDialogSubtitle>
           </div>
-          <button
-            type='button'
-            className='relative ml-1 flex h-6 w-6 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-lg border border-zinc-950/10 text-zinc-500 transition-colors hover:bg-zinc-100 hover:text-zinc-800 focus-visible:ring-2 active:scale-[0.98] dark:border-zinc-50/10 dark:bg-zinc-900 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:focus-visible:ring-zinc-500'
-            aria-label='Open dialog'
-          >
-            <PlusIcon size={12} />
-          </button>
         </div>
       </MorphingDialogTrigger>
       <MorphingDialogContainer>
@@ -139,7 +132,7 @@ export function ProjectsContainer({
           style={{
             borderRadius: '24px',
           }}
-          className='pointer-events-auto relative flex mx-55 h-[90vh] w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900'
+          className='pointer-events-auto relative flex mx-55 h-[90vh] w-full flex-col overflow-hidden bg-white'
         >
           {/* Close button - fixed on top */}
           <MorphingDialogClose className='fixed top-6 right-6 text-zinc-50 z-30' />
@@ -152,39 +145,39 @@ export function ProjectsContainer({
               className='h-auto w-full'
             />
             <div className='p-6'>
-              <MorphingDialogTitle className='text-2xl text-zinc-950 dark:text-zinc-50'>
+              <MorphingDialogTitle className='text-2xl font-bold text-black mb-3'>
                 {title}
               </MorphingDialogTitle>
-              <MorphingDialogSubtitle className='text-zinc-700 dark:text-zinc-400'>
+              <MorphingDialogSubtitle className='font-semibold text-zinc-700'>
                 {subtitle}
               </MorphingDialogSubtitle>
-              <MorphingDialogDescription
+                <MorphingDialogDescription
                 disableLayoutAnimation
                 variants={{
                   initial: { opacity: 0, scale: 0.8, y: 100 },
                   animate: { opacity: 1, scale: 1, y: 0 },
                   exit: { opacity: 0, scale: 0.8, y: 100 },
                 }}
-              >
+                >
                 {description.map((paragraph, index) => (
-                  <p key={index} className='mt-2 text-zinc-500 dark:text-zinc-500'>
-                    {paragraph}
+                  <p key={index} className='mt-3 text-gray-500 text-justify'>
+                  {paragraph}
                   </p>
                 ))}
                 {link && linkHeader &&(
                   <a
-                    className='mt-2 inline-flex text-zinc-500 hover:text-[#88ccb4] transition-colors group'
-                    href={link}
-                    target='_blank'
-                    rel='noopener noreferrer'
+                  className='mt-5 inline-flex text-black hover:text-[#88ccb4] transition-colors group'
+                  href={link}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   >
-                    {linkHeader.slice(0, -1)}
-                    <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                        ↗
-                    </span>
+                  {linkHeader.slice(0, -1)}
+                  <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                    ↗
+                  </span>
                   </a>
                 )}
-              </MorphingDialogDescription>
+                </MorphingDialogDescription>
             </div>
           </div>
         </MorphingDialogContent>
