@@ -1,12 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Dither from "../blocks/Backgrounds/Dither/Dither";
 import ScrollVelocity from "../blocks/TextAnimations/ScrollVelocity/ScrollVelocity";
-import { TimelineData } from "./TimelineData";
-import { BentoData } from "./BentoData";
-import { MorphingDialogBasicOne } from "./MorphingData";
+import { ExperienceData } from "../data/ExperienceData";
+import { ProjectsContainer, projectsData } from "../data/ProjectsData";
+import AboutData from "@/data/AboutData";
 
 function Home () {
     const [active, setActive] = useState(0);
+    const [currentSection, setCurrentSection] = useState<string | null>(null);
     const navItems = [
         'About',
         'Experience',
@@ -18,13 +19,36 @@ function Home () {
         { label: 'GitHub↗', href: 'https://github.com/zul-aji' }
     ];
 
-    // Refs for smooth scroll
+    // Refs for sections
     const aboutRef = useRef<HTMLDivElement>(null);
-    const expRef = useRef<HTMLDivElement>(null);
+    const experienceRef = useRef<HTMLDivElement>(null);
     const projectRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-    // Handle nav click for About
+    // Setup intersection observer
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setCurrentSection(entry.target.getAttribute('data-section'));
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+            }
+        );
+
+        // Observe sections
+        if (aboutRef.current) observer.observe(aboutRef.current);
+        if (experienceRef.current) observer.observe(experienceRef.current);
+        if (projectRef.current) observer.observe(projectRef.current);
+        if (scrollContainerRef.current) observer.observe(scrollContainerRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
     const handleNavClick = (idx: number) => {
         setActive(idx);
         if (idx === 0 && aboutRef.current && scrollContainerRef.current) {
@@ -32,12 +56,22 @@ function Home () {
                 top: aboutRef.current.offsetTop,
                 behavior: 'smooth',
             });
+        } else if (idx === 1 && experienceRef.current && scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({
+                top: experienceRef.current.offsetTop,
+                behavior: 'smooth',
+            });
+        } else if (idx === 2 && projectRef.current && scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({
+                top: projectRef.current.offsetTop,
+                behavior: 'smooth',
+            });
         }
     };
 
     return (
         <div className="relative min-h-screen min-w-screen overflow-hidden">
-            {/* Dither background - full screen, fixed */}
+            {/* Dither background */}
             <div className="fixed inset-0 w-full h-full z-0">
                 <Dither
                     waveColor={[0.5, 0.8, 0.7]}
@@ -51,7 +85,7 @@ function Home () {
                 />
             </div>
 
-            {/* Top nav section, fixed */}
+            {/* Top nav section */}
             <div className="fixed top-0 left-0 w-full z-20 flex justify-center pt-6 md:pt-10 pointer-events-none">
                 <nav className="flex flex-row gap-4 md:gap-10 px-4 md:px-8 pointer-events-auto">
                     {navItems.map((item, idx) => (
@@ -62,8 +96,12 @@ function Home () {
                             style={{ background: 'none', border: 'none', boxShadow: 'none' }}
                         >
                             <span
-                                className={`mr-2 transition-opacity duration-200`}
-                                style={{ opacity: active === idx ? 1 : 0 }}
+                                className="mr-2 transition-opacity duration-200"
+                                style={{ 
+                                    opacity: (idx === 0 && currentSection === 'about') || 
+                                            (idx === 1 && currentSection === 'experience') ||
+                                            (idx === 2 && currentSection === 'projects') ? 1 : 0 
+                                }}
                             >
                                 •
                             </span>
@@ -95,11 +133,11 @@ function Home () {
 
             {/* Scrollable content area */}
             <div 
-                ref={scrollContainerRef} className="relative z-10 flex flex-col justify-start min-h-screen h-screen overflow-y-auto overflow-x-hidden scroll-smooth pb-24"
+                ref={scrollContainerRef} data-section="hero" className="relative z-10 flex flex-col justify-start min-h-screen h-screen overflow-y-auto overflow-x-hidden scroll-smooth pb-24"
             >
              
             {/* ScrollVelocity section - full page */}
-                <div className="flex items-center justify-center text-white min-h-screen h-screen shrink-0">
+                <div data-section="hero" className="flex items-center justify-center text-white min-h-screen h-screen shrink-0">
                     <ScrollVelocity
                         texts={['A Portofolio', 'by Zulfiqar']}
                         velocity={80}
@@ -110,111 +148,36 @@ function Home () {
                 {/* About section - full page */}
                 <div
                     ref={aboutRef}
+                    data-section="about"
                     className="flex flex-col items-center justify-center min-h-screen h-screen shrink-0 px-4 md:px-8"
                 >                    
-                    <p className="text-base md:text-2xl text-gray-300 font-medium w-full max-w-[min(83.333%,_40ch)] text-center">
-                        Software Engineer with expertise in mobile application development using{' '}
-                        <a
-                            href="https://flutter.dev/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            Flutter
-                        </a>{' '}
-                        and{' '}
-                        <a
-                            href="https://kotlinlang.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            Kotlin
-                        </a>{' '}
-                        for native Android utilizing{' '}
-                        <a
-                            href="https://dart.dev/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            Dart
-                        </a>{' '}
-                        and{' '}
-                        <a
-                            href="https://developer.android.com/jetpack?gad_source=1&gad_campaignid=21831783573&gbraid=0AAAAAC-IOZkjDGHRZI4do_7MMwXn5VIFw&gclid=Cj0KCQjwu7TCBhCYARIsAM_S3NhGn9LIYE9hpPDY2WoYz-5mS1enKAXMObNwVt9tSHR_wZRqiHbZ2vsaAjDUEALw_wcB&gclsrc=aw.ds"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            Jetpack Compose
-                        </a>
-                        . I am also proficient in front-end development, specializing in{' '}
-                        <a
-                            href="https://react.dev/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            React
-                        </a>{' '} 
-                        with{' '}
-                        <a
-                            href="https://web.dev/javascript"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            JavaScript
-                        </a>{' '} 
-                        and{' '}
-                        <a
-                            href="https://www.typescriptlang.org/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            TypeScript
-                        </a>{' '} 
-                        for creating dynamic web applications, as well as back-end technologies like{' '} 
-                        <a
-                            href="https://dotnet.microsoft.com/en-us/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            .Net
-                        </a>{' '}  
-                        and{' '}
-                        <a
-                            href="https://nodejs.org/en"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="font-semibold text-white hover:text-[#88ccb4] transition-colors"
-                        >
-                            Node.js
-                        </a>
-                        .
-                    </p>
+                    <AboutData/>
                 </div>
 
                 {/* Experience section - full page */}
                 <div
-                    ref={expRef}
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pb-24"
+                    ref={experienceRef}
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pt-14 pb-24"
+                    data-section="experience"
                 >
                     <div className="w-full max-w-6xl">
-                        <TimelineData />
+                        <ExperienceData />
                     </div>
                 </div>
 
                 {/* Projects section - full page */}
                 <div
                     ref={projectRef}
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pb-24"
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-25"
+                    data-section="projects"
                 >
-                    <div>
-                        <MorphingDialogBasicOne/>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-4 md:px-6">
+                        {projectsData.map((project, index) => (
+                            <ProjectsContainer
+                            key={index}
+                            {...project}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
