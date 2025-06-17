@@ -20,7 +20,7 @@ jobs:
           node-version: latest
 
       - name: Install dependencies
-        run: nnpm install
+        run: npm install
 
       - name: Build project
         run: npm run build
