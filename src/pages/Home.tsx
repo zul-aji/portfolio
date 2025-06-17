@@ -6,7 +6,7 @@ import { ProjectsContainer, projectsData } from "../data/ProjectsData";
 import AboutData from "@/data/AboutData";
 
 function Home () {
-    const [active, setActive] = useState(0);
+    const [_, setActive] = useState(0);
     const [currentSection, setCurrentSection] = useState<string | null>(null);
     const navItems = [
         'About',
