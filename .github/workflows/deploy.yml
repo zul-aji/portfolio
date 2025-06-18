@@ -1,4 +1,4 @@
-name: Portofolio Deploy
+name: Portfolio Deploy
 
 on:
   workflow_dispatch:

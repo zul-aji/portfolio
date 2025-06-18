@@ -1,3 +1,37 @@
+# Portfolio by Zulfiqar
+
+This is my personal portfolio website showcasing my work experience, projects, and skills. The website features:
+
+- Modern and clean design with animated backgrounds
+- Smooth transitions and scroll animations
+- Responsive layout for all devices
+- Interactive project cards and experience timeline
+- Built with:
+  - React + TypeScript
+  - Vite
+  - Tailwind CSS
+  - Framer Motion
+  - Three.js for background effects
+
+## Live Demo
+Visit the live site at: [Your portfolio URL]
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+3. Run the development server:
+```bash
+npm run dev
+```
+
+---
+
+## Development Details (Vite Setup)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
