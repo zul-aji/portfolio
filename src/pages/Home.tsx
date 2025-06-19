@@ -11,7 +11,7 @@ function Home () {
     const navItems = [
         'About',
         'Experience',
-        'Projects'
+        'Projects',
     ];
     const bottomLinks = [
         { label: 'Email↗', href: 'mailto:zulfiqar.aji@gmail.com' },
@@ -36,7 +36,8 @@ function Home () {
                 });
             },
             {
-                threshold: 0.65,
+                threshold: 0.3,
+                rootMargin: '-10% 0px'
             }
         );
 
@@ -44,13 +45,13 @@ function Home () {
         if (aboutRef.current) observer.observe(aboutRef.current);
         if (experienceRef.current) observer.observe(experienceRef.current);
         if (projectRef.current) observer.observe(projectRef.current);
-        if (scrollContainerRef.current) observer.observe(scrollContainerRef.current);
 
         return () => observer.disconnect();
     }, []);
 
     const handleNavClick = (idx: number) => {
         setActive(idx);
+        console.log(idx)
         if (idx === 0 && aboutRef.current && scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({
                 top: aboutRef.current.offsetTop,
@@ -96,7 +97,7 @@ function Home () {
                             style={{ background: 'none', border: 'none', boxShadow: 'none' }}
                         >
                             <span
-                                className="mr-2 transition-opacity duration-200"
+                                className="mr-2 transition-opacity duration-250"
                                 style={{ 
                                     opacity: (idx === 0 && currentSection === 'about') || 
                                             (idx === 1 && currentSection === 'experience') ||
@@ -139,7 +140,7 @@ function Home () {
             {/* ScrollVelocity section - full page */}
                 <div data-section="hero" className="flex items-center justify-center text-white min-h-screen h-screen shrink-0">
                     <ScrollVelocity
-                        texts={['A Portofolio', 'by Zulfiqar']}
+                        texts={['A Portfolio', 'by Zulfiqar']}
                         velocity={80}
                         className="custom-scroll-text"
                     />
@@ -157,8 +158,8 @@ function Home () {
                 {/* Experience section - full page */}
                 <div
                     ref={experienceRef}
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pt-14 pb-24"
                     data-section="experience"
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pt-14 pb-24"
                 >
                     <div className="w-full max-w-6xl">
                         <ExperienceData />
@@ -168,10 +169,10 @@ function Home () {
                 {/* Projects section - full page */}
                 <div
                     ref={projectRef}
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-33"
                     data-section="projects"
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-33"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl mx-auto px-6 md:px-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-6 md:px-10">
                         {projectsData.map((project, index) => (
                             <ProjectsContainer
                             key={index}
