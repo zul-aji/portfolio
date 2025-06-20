@@ -172,7 +172,7 @@ export function ProjectsContainer({
           className='pointer-events-auto relative flex mx-5 sm:mx-35 lg:mx-75 h-[90vh] w-full flex-col overflow-hidden bg-gray-200'
         >
           {/* Close button - fixed on top */}
-          <MorphingDialogClose className='fixed rounded-md p-1 top-12 right-9 sm:top-6 sm:right-6 bg-gray-300 text-black sm:text-zinc-50 sm:bg-transparent z-30' />
+          <MorphingDialogClose className='fixed rounded-md p-1 top-9 right-9 sm:top-6 sm:right-6 bg-gray-300 text-black sm:text-zinc-50 sm:bg-transparent z-30' />
 
           {/* Scrollable content including image */}
           <div className="flex-1 overflow-y-auto">

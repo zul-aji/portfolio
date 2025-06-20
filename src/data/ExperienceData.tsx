@@ -18,10 +18,13 @@ export function ExperienceData() {
       description: "A freelance developer, collaborating with university peers to build custom websites and mobile applications for clients. My projects involve developing Android applications using Kotlin and Flutter, as well as creating web solutions with various JS Frameworks. This work focuses on implementing functional requirements, integrating APIs, and ensuring applications perform reliably across different platforms.",
       tools: [
         "React",
-        "Next.js",
+        "Javascript",
+        "TypeScript",
         "Flutter",
+        "Dart",
         "Kotlin",
-        "TypeScript"
+        "Jetpack Compose",
+        "REST API",
       ]
     },
     {
@@ -31,10 +34,9 @@ export function ExperienceData() {
       description: "A startup offering accommodation services through Indonesian students abroad, I worked as an Android Application Developer. My primary responsibilities included developing and maintaining mobile applications using Flutter, as well as integrating them with backend services built on Laravel. The work involved ensuring smooth functionality, implementing features, and maintaining the app to support the platform's operations.",
       tools: [
         "Flutter",
+        "Dart",
         "Laravel",
-        "Firebase",
-        "REST API",
-        "MySQL"
+        "REST API"
       ]
     },
   ];

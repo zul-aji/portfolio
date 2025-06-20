@@ -1,9 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import Dither from "../blocks/Backgrounds/Dither/Dither";
-import ScrollVelocity from "../blocks/TextAnimations/ScrollVelocity/ScrollVelocity";
 import { ExperienceData } from "../data/ExperienceData";
 import { ProjectsContainer, projectsData } from "../data/ProjectsData";
 import AboutData from "@/data/AboutData";
+import { HeroData } from "@/data/HeroData";
+import React from "react";
+
+const DitherComp = React.lazy(() => import('../blocks/Backgrounds/Dither/Dither'));
 
 function Home () {
     const [_, setActive] = useState(0);
@@ -74,7 +77,8 @@ function Home () {
         <div className="relative min-h-screen min-w-screen overflow-hidden">
             {/* Dither background */}
             <div className="fixed inset-0 w-full h-full z-0">
-                <Dither
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <DitherComp
                     waveColor={[0.5, 0.8, 0.7]}
                     disableAnimation={false}
                     enableMouseInteraction={false}
@@ -83,7 +87,8 @@ function Home () {
                     waveAmplitude={0.04}
                     waveFrequency={0.5}
                     waveSpeed={0.06}
-                />
+                    />
+                </React.Suspense>
             </div>
 
             {/* Top nav section */}
@@ -137,16 +142,12 @@ function Home () {
                 ref={scrollContainerRef} data-section="hero" className="relative z-10 flex flex-col justify-start min-h-screen h-screen overflow-y-auto overflow-x-hidden scroll-smooth pb-24"
             >
              
-            {/* ScrollVelocity section - full page */}
+            {/* ScrollVelocity section */}
                 <div data-section="hero" className="flex items-center justify-center text-white min-h-screen h-screen shrink-0">
-                    <ScrollVelocity
-                        texts={['A Portfolio', 'by Zulfiqar']}
-                        velocity={80}
-                        className="custom-scroll-text"
-                    />
+                    <HeroData/>
                 </div>
 
-                {/* About section - full page */}
+                {/* About section */}
                 <div
                     ref={aboutRef}
                     data-section="about"
@@ -155,7 +156,7 @@ function Home () {
                     <AboutData/>
                 </div>
 
-                {/* Experience section - full page */}
+                {/* Experience section */}
                 <div
                     ref={experienceRef}
                     data-section="experience"
@@ -166,7 +167,7 @@ function Home () {
                     </div>
                 </div>
 
-                {/* Projects section - full page */}
+                {/* Projects section */}
                 <div
                     ref={projectRef}
                     data-section="projects"
