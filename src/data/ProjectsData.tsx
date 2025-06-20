@@ -169,20 +169,20 @@ export function ProjectsContainer({
           style={{
             borderRadius: '24px',
           }}
-          className='pointer-events-auto relative flex mx-5 sm:mx-35 lg:mx-75 h-[90vh] w-full flex-col overflow-hidden bg-gray-200'
+          className='pointer-events-auto relative flex mx-5 my-2 sm:mx-35 lg:mx-75 h-[90vh] w-full flex-col overflow-hidden bg-gray-200'
         >
           {/* Close button - fixed on top */}
           <MorphingDialogClose className='fixed rounded-md p-1 top-9 right-9 sm:top-6 sm:right-6 bg-gray-300 text-black sm:text-zinc-50 sm:bg-transparent z-30' />
 
           {/* Scrollable content including image */}
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto mb-5">
             <MorphingDialogImage
               src={image}
               alt={`${title} by ${subtitle}`}
               className='h-auto w-full'
             />
             <div className='p-6'>
-                <div className="flex justify-between items-center mx-4 mb-3">
+                <div className="flex justify-between items-center mx-1 sm:mx-4 mb-3">
                 <MorphingDialogTitle className='text-2xl font-bold text-black'>
                   {title}
                 </MorphingDialogTitle>
@@ -200,7 +200,7 @@ export function ProjectsContainer({
                   </a>
                 )}
                 </div>
-                <MorphingDialogSubtitle className='font-semibold text-zinc-600 mx-4'>
+                <MorphingDialogSubtitle className='font-semibold text-zinc-600 mx-1 sm:mx-4'>
                   {subtitle}
                 </MorphingDialogSubtitle>
                 <MorphingDialogDescription
@@ -212,7 +212,7 @@ export function ProjectsContainer({
                   }}
                 >
                   {description.map((paragraph, index) => (
-                    <p key={index} className='my-3 text-gray-500 text-justify mx-4'>
+                    <p key={index} className='my-3 text-gray-500 text-justify mx-1 sm:mx-4'>
                     {paragraph}
                     </p>
                   ))}

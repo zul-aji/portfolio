@@ -61,7 +61,7 @@ float cnoise(vec2 P) {
   return 2.3 * mix(n_x.x, n_x.y, fade_xy.y);
 }
 
-const int OCTAVES = 8;
+const int OCTAVES = 4;
 float fbm(vec2 p) {
   float value = 0.0;
   float amp = 1.0;
@@ -236,7 +236,11 @@ function DitheredWaves({
     }
   }, [size, gl]);
 
+  const frameSkip = 2; // update every 2nd frame
+  let frameCount = 0;
   useFrame(({ clock }) => {
+    frameCount++;
+    if (frameCount % frameSkip !== 0) return;
     if (!disableAnimation) {
       waveUniformsRef.current.time.value = clock.getElapsedTime();
     }
@@ -306,8 +310,8 @@ export default function Dither({
   waveFrequency = 3,
   waveAmplitude = 0.3,
   waveColor = [0.5, 0.5, 0.5],
-  colorNum = 4,
-  pixelSize = 2,
+  colorNum = 3,
+  pixelSize = 3,
   disableAnimation = false,
   enableMouseInteraction = true,
   mouseRadius = 1,
@@ -316,7 +320,7 @@ export default function Dither({
     <Canvas
       className="w-full h-full relative"
       camera={{ position: [0, 0, 6] }}
-      dpr={window.devicePixelRatio}
+      dpr={Math.min(window.devicePixelRatio, 1.5)}
       gl={{ antialias: true, preserveDrawingBuffer: true }}
     >
       <DitheredWaves

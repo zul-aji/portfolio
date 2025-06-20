@@ -53,7 +53,6 @@ function Home () {
 
     const handleNavClick = (idx: number) => {
         setActive(idx);
-        console.log(idx)
         if (idx === 0 && aboutRef.current && scrollContainerRef.current) {
             scrollContainerRef.current.scrollTo({
                 top: aboutRef.current.offsetTop,
@@ -82,7 +81,7 @@ function Home () {
                     disableAnimation={false}
                     enableMouseInteraction={false}
                     mouseRadius={0.2}
-                    colorNum={8}
+                    colorNum={6}
                     waveAmplitude={0.04}
                     waveFrequency={0.5}
                     waveSpeed={0.06}
@@ -159,7 +158,7 @@ function Home () {
                 <div
                     ref={experienceRef}
                     data-section="experience"
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 pt-14 pb-24"
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 px-5 pt-10 sm:pt-14 pb-24"
                 >
                     <div className="w-full max-w-6xl">
                         <ExperienceData />
@@ -170,7 +169,7 @@ function Home () {
                 <div
                     ref={projectRef}
                     data-section="projects"
-                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-33"
+                    className="flex flex-col items-center justify-start min-h-screen shrink-0 py-20 sm:py-33"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-6 md:px-10">
                         {projectsData.map((project, index) => (
