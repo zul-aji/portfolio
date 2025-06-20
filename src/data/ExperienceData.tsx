@@ -69,13 +69,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             <div className="relative pl-4 md:pl-6 pr-2 md:pr-4 font-['Plus_Jakarta_Sans'] w-full">
-              <h3 className="pb-1 md:hidden block text-base text-left font-semibold text-[#88ccb4]">
+              <h3 className="pb-1 md:hidden block text-base text-left font-bold text-[#88ccb4]">
                 {item.dateRange}
               </h3>
               <div>
                 <h1 className="mb-3 font-bold text-white text-xl md:text-2xl xl:text-2xl flex items-center gap-1">
                   {item.companyName}
-                  <span className="text-base font-normal italic">{item.position}</span>
+                  <span className="text-base text-[#88ccb4] font-normal italic">{item.position}</span>
                 </h1>
                 <p className="mb-4 text-sm font-semibold text-gray-300 md:text-xl text-justify">
                   {item.description}
