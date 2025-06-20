@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import Dither from "../blocks/Backgrounds/Dither/Dither";
 import { ExperienceData } from "../data/ExperienceData";
 import { ProjectsContainer, projectsData } from "../data/ProjectsData";
 import AboutData from "@/data/AboutData";
