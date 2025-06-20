@@ -84,7 +84,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   {item.tools.map((tool, toolIndex) => (
                     <span
                       key={toolIndex}
-                      className="px-3 py-1 text-sm md:text-base rounded-full bg-[#88ccb4]/20 text-gray-300 border border-gray-300/30
+                      className="px-3 py-1 text-sm md:text-base rounded-full bg-[#88ccb4]/20 text-gray-300 border border-gray-300
                                transition-all duration-300 hover:bg-[#88ccb4]/20 hover:border-[#88ccb4] hover:-translate-y-0.5"
                     >
                       {tool}

@@ -5,7 +5,7 @@ import AboutData from "@/data/AboutData";
 import { HeroData } from "@/data/HeroData";
 import React from "react";
 
-const DitherComp = React.lazy(() => import('../blocks/Backgrounds/Dither/Dither'));
+const SilkComp = React.lazy(() => import('../blocks/Backgrounds/Silk'));
 
 function Home () {
     const [_, setActive] = useState(0);
@@ -73,18 +73,15 @@ function Home () {
 
     return (
         <div className="relative min-h-screen min-w-screen overflow-hidden">
-            {/* Dither background */}
+            {/* background */}
             <div className="fixed inset-0 w-full h-full z-0">
                 <React.Suspense fallback={<div>Loading...</div>}>
-                    <DitherComp
-                    waveColor={[0.5, 0.8, 0.7]}
-                    disableAnimation={false}
-                    enableMouseInteraction={false}
-                    mouseRadius={0.2}
-                    colorNum={6}
-                    waveAmplitude={0.04}
-                    waveFrequency={0.5}
-                    waveSpeed={0.06}
+                    <SilkComp
+                        speed={2}
+                        scale={0.4}
+                        color="#88CCB4"
+                        noiseIntensity={2.5}
+                        rotation={0}
                     />
                 </React.Suspense>
             </div>

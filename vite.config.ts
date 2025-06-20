@@ -5,6 +5,16 @@ import tailwindcss from '@tailwindcss/vite'
 import path from "path"
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ['three'],
+          framer: ['framer-motion'],
+        },
+      },
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),

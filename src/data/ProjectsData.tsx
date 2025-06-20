@@ -23,16 +23,18 @@ const getProjectImage = (imageName: string) => {
 };
 
 export interface ProjectData {
+  image: string;
   title: string;
   subtitle: string;
   description: string[];
-  image: string;
+  tools: string[];
   link?: string;
   linkHeader?: string;
 }
 
 export const projectsData: ProjectData[] = [
   {
+    image: getProjectImage('projects-angkasapp') || '/placeholder.jpg',
     title: "AngkasApp",
     subtitle: "An android application for navigation in Soekarno-Hatta Airport",
     description: [
@@ -40,11 +42,19 @@ export const projectsData: ProjectData[] = [
       "The application offers two core functionalities that address different aspects of airport navigation. First, it provides step-by-step indoor navigation where users can select starting points and destinations, with zoomable maps for better orientation in complex terminal spaces. Second, it integrates flight management features including real-time flight searches by IATA code, complete schedules for arrivals and departures at Soekarno-Hatta, and customizable flight reminders. These combined features create a seamless experience where passengers can navigate terminals while staying informed about their flights, all within a single application.",
       "For the technical implementation, I selected the A* pathfinding algorithm for its efficiency and its grid-based nature that is easy to be reconfigured for often layout changes. The application was built using Flutter and Dart to ensure cross-platform compatibility from the start. Flight data is pulled in real-time through integration with the Airlabs API, the MVVM architecture was chosen to maintain clean separation of concerns and improve long-term maintainability, and HiveBox plugin for local storage. This project represents my ability to transform academic research into practical solutions while addressing real-world usability challenges.",
     ],
-    image: getProjectImage('projects-angkasapp') || '/placeholder.jpg',
+    tools: [
+        "Flutter",
+        "Dart",
+        "HiveBox",
+        "A* algorithm",
+        "AirLabs API",
+        "MVVM"
+      ],
     link: "https://github.com/zul-aji/AngkasApp",
     linkHeader: "Github Repo↗"
   },
   {
+    image: getProjectImage('projects-youmart') || '/placeholder.jpg',
     title: "YouMart",
     subtitle: "An android application for a local convenience store in Malaysia",
     description: [
@@ -52,11 +62,18 @@ export const projectsData: ProjectData[] = [
       "The app serves two user roles: customers and the store owner. For customers, it provides real-time updates on store status (open/closed) and live inventory, eliminating the need for physical checks. Users can browse available items, place orders for pickup, and view their order history—with the option to reorder past purchases seamlessly. Guest login is supported, though order history is restricted to registered accounts. On the admin side, the store owner can manage inventory (add/update/remove items), adjust opening hours, and monitor incoming orders—all through an intuitive interface. The order feature reduces in-store browsing time, streamlining operations for both parties.",
       "Built with Flutter and Dart, the app leverages GetX for state management and follows an MVC architecture for scalability. Firebase Firestore powers the user authentication process and real-time database, ensuring instant updates for inventory and store status—a critical feature for reliability. The project was a hands-on lesson in solving tangible problems with user-centric design and efficient technical execution."
     ],
-    image: getProjectImage('projects-youmart') || '/placeholder.jpg',
+    tools: [
+        "Flutter",
+        "Dart",
+        "GetX",
+        "Firebase Firestore",
+        "MVC"
+      ],
     link: "https://github.com/zul-aji/youmart_mobitech",
     linkHeader: "Github Repo↗"
   },
   {
+    image: getProjectImage('projects-lungoapp') || '/placeholder.jpg',
     title: '"Lungo" Android Application',
     subtitle: "An itinerary android application for travel planning",
     description: [
@@ -64,9 +81,15 @@ export const projectsData: ProjectData[] = [
       "The app serves two key user groups: merchants and travelers. Merchants can register their businesses (lodging, vehicle rentals, culinary spots, or excursions) with detailed profiles, including facilities, operating hours, photos, and descriptions. Travelers, after setting their arrival/departure dates, can build personalized itineraries by adding merchant services at specific times. The app also provides business details, past travel history tracking, and user account management—creating a seamless end-to-end travel planning experience.",
       "Built with Flutter and Dart, the app integrates Google Maps API for location services, SharedPreferences for local storage, and a custom backend API. Third-party login (Google/Apple) simplifies user onboarding. While currently focused on Surabaya, the architecture is designed for easy expansion to other cities, demonstrating scalable development practices."
     ],
-    image: getProjectImage('projects-lungoapp') || '/placeholder.jpg',
+    tools: [
+        "Flutter",
+        "Dart",
+        "Google Maps API",
+        "Third Party login"
+      ],
   },
   {
+    image: getProjectImage('projects-movieapp') || '/placeholder.jpg',
     title: "Movie Catalog",
     subtitle: "A Movie Catalog Application with Kotlin",
     description: [
@@ -74,11 +97,18 @@ export const projectsData: ProjectData[] = [
       "The app combines essential user account management with comprehensive movie exploration. Users can securely register, log in, and manage their profiles while browsing an extensive movie catalog. Each film displays its average community rating, helping users quickly gauge popularity. The detailed movie screen goes further, offering complete information alongside user reviews—where anyone can contribute ratings (on a 10-point scale) and written feedback, either publicly or anonymously. To personalize the experience, users can save favorites to their own curated lists for quick access later.",
       "Built with Kotlin and XML in Android Studio, the application follows MVVM architecture for clean code organization and maintainability. SharedPreferences handles secure local storage of user tokens, ensuring persistent sessions. This project demonstrated my ability to transform academic requirements into a functional, user-friendly product with real-world utility."
     ],
-    image: getProjectImage('projects-movieapp') || '/placeholder.jpg',
+    tools: [
+        "Kotlin",
+        "XML",
+        "Android Studio",
+        "REST API",
+        "MVVM"
+      ],
     link: "https://github.com/zul-aji/Movie-Catalog",
     linkHeader: "Github Repo↗"
   },
   {
+    image: getProjectImage('projects-tsuedu') || '/placeholder.jpg',
     title: "TSU Educational Portal",
     subtitle: "TSU Educational Portal Android Application",
     description: [
@@ -86,11 +116,18 @@ export const projectsData: ProjectData[] = [
       "The application features secure authentication (login/logout/password management) with distinct interfaces for students and administrators. Students can access their personalized academic dashboard containing class schedules, faculty information, study groups, and course details. For administrators, the system provides comprehensive CRUD functionality - enabling them to update academic records, modify course information, and approve new student account registrations through an intuitive management interface.",
       "Built with Kotlin and XML using Android Studio, the application delivers a responsive native Android experience. The clean architecture ensures reliable performance for both information retrieval and administrative updates, demonstrating my ability to create practical solutions for institutional needs."
     ],
-    image: getProjectImage('projects-tsuedu') || '/placeholder.jpg',
+    tools: [
+        "Kotlin",
+        "XML",
+        "Android Studio",
+        "REST API",
+        "Clean Architecture"
+      ],
     link: "https://github.com/zul-aji/TSU-Educational-Portal",
     linkHeader: "Github Repo↗"
   },
   {
+    image: getProjectImage('projects-lungoweb') || '/placeholder.jpg',
     title: '"Lungo" Web Admin',
     subtitle: "A merchant management system for the Lungo application",
     description: [
@@ -98,41 +135,66 @@ export const projectsData: ProjectData[] = [
       "The portal features six organized merchant lists to streamline operations. The review list allows admins to evaluate new applicant registrations with approve/reject functionality. Active merchants are tracked with subscription expiry monitoring, while separate lists maintain records of rejected applications and expired subscriptions for reference. The system also incorporates potential merchant discovery through a scraped prospects list from web data and a join-later list for deferred onboarding candidates. Across all lists, admins can access complete merchant profiles matching app data for informed decision-making.",
       "Built with React.js and JavaScript, the solution implements Axios for API integration and JWT for secure authentication. This technology combination delivers a responsive admin interface that effectively supports Lungo's merchant vetting and management processes at scale.",
     ],
-    image: getProjectImage('projects-lungoweb') || '/placeholder.jpg',
+    tools: [
+        "React",
+        "JavaScript",
+        "Axios",
+        "JWT",
+        "REST API",
+      ],
   },
   {
+    image: getProjectImage('projects-medapi') || '/placeholder.jpg',
     title: "Medical Information API",
     subtitle: "Medical Information System using .Net",
     description: [
       "Developed as academic coursework at Tomsk State University, this project created a secure API for doctors to manage and collaborate on patient medical records. The system was designed to address the need for organized digital record-keeping while enabling professional consultation among specialists - replacing fragmented paper-based documentation with a centralized digital solution.",
       "The API handles three core entities: patient data, doctor profiles, and consultation records. Doctors can store comprehensive patient information and create detailed consultation records including anamnesis, diagnoses, treatment plans, and follow-up requirements. A unique collaborative feature allows doctors within the same specialty to comment on cases - enabling peer review of diagnoses, treatment approaches, or general case discussion through threaded conversations. This creates a knowledge-sharing ecosystem while maintaining complete patient history documentation.",
-      "Built with C# and .NET Framework in Visual Studio, the API implements professional-grade technologies: JWT for secure authentication, Entity Framework Core for database operations, and Microsoft SQL Server for reliable data storage. Swagger documentation ensures easy integration for frontend developers. This project demonstrated my ability to create secure, professional systems that meet strict healthcare data requirements."
+      "Built with C# and .NET Framework in Visual Studio, the API implements professional-grade technologies: JWT for secure authentication, Entity Framework Core for database operations, and Microsoft SQL Server Management for reliable data storage. Swagger documentation ensures easy integration for frontend developers. This project demonstrated my ability to create secure, professional systems that meet strict healthcare data requirements."
     ],
-    image: getProjectImage('projects-medapi') || '/placeholder.jpg',
+    tools: [
+        ".Net",
+        "C#",
+        "Visual Studio",
+        "Entity Framework Core",
+        "JWT",
+        "Microsoft SQL Server Management",
+        "Swagger"
+      ],
     link: "https://github.com/zul-aji/Medical-Information-System-API",
     linkHeader: "Github Repo↗"
   },
   {
+    image: getProjectImage('projects-foodapi') || '/placeholder.jpg',
     title: "Food Delivery API",
     subtitle: "Food Delivery System using .Net",
     description: [
       "Developed as academic coursework at Tomsk State University, this project created a robust API to help traditional food establishments transition to online ordering. The system addresses the growing need for small food businesses to compete in the digital marketplace by providing them with essential e-commerce capabilities without requiring complex infrastructure.",
       "The API enables customers to browse restaurant menus, view dish details and ratings, and compile orders through a digital basket system. Users benefit from standard authentication features (registration, login, profile management) alongside intuitive ordering functionality - they can modify basket contents, review selections, and finalize purchases. Restaurant owners receive real-time order notifications and can update order statuses throughout the fulfillment process, creating a seamless workflow from order placement to delivery.",
-      "Built with C# and .NET Framework in Visual Studio, the API employs professional development tools including JWT for secure authentication, Entity Framework Core for database operations, and Microsoft SQL Server for reliable data storage. The integration of Swagger documentation ensures easy adoption by frontend developers, making this a complete solution for food businesses entering the digital space."
+      "Built with C# and .NET Framework in Visual Studio, the API employs professional development tools including JWT for secure authentication, Entity Framework Core for database operations, and Microsoft SQL Server Management for reliable data storage. The integration of Swagger documentation ensures easy adoption by frontend developers, making this a complete solution for food businesses entering the digital space."
     ],
-    image: getProjectImage('projects-foodapi') || '/placeholder.jpg',
+    tools: [
+        ".Net",
+        "C#",
+        "Visual Studio",
+        "Entity Framework Core",
+        "JWT",
+        "Microsoft SQL Server Management",
+        "Swagger"
+      ],
     link: "https://github.com/zul-aji/Food-Delivery-API",
     linkHeader: "Github Repo↗"
   },
 ];
 
 export function ProjectsContainer({ 
+  image, 
   title, 
   subtitle, 
-  description, 
-  image, 
+  description,
+  tools,
   link,
-  linkHeader 
+  linkHeader
 }: ProjectData) {
   return (
     <MorphingDialog
@@ -146,7 +208,7 @@ export function ProjectsContainer({
         style={{
           borderRadius: '12px',
         }}
-        className='flex max-w-[380px] md:max-w-[400px] flex-col overflow-hidden bg-gray-300/20 backdrop-blur-xl'
+        className='flex max-w-[380px] md:max-w-[400px] flex-col overflow-hidden bg-gray-300/20 backdrop-blur-xs'
       >
         <MorphingDialogImage
           src={image}
@@ -155,10 +217,10 @@ export function ProjectsContainer({
         />
         <div className='flex grow flex-row items-center justify-center px-3 py-5'>
           <div className='items-start'>
-            <MorphingDialogTitle className='text-white font-semibold'>
+            <MorphingDialogTitle className='text-white text-sm sm:text-xl font-semibold'>
               {title}
             </MorphingDialogTitle>
-            <MorphingDialogSubtitle className='text-gray-300'>
+            <MorphingDialogSubtitle className='text-gray-300 text-xs sm:text-lg'>
               {subtitle}
             </MorphingDialogSubtitle>
           </div>
@@ -217,6 +279,17 @@ export function ProjectsContainer({
                     </p>
                   ))}
                 </MorphingDialogDescription>
+                <div className="flex flex-wrap gap-3 mt-5 mx-1 sm:mx-3">
+                  {tools.map((tool, toolIndex) => (
+                    <span
+                      key={toolIndex}
+                      className="px-3 py-1 text-sm md:text-base rounded-full text-gray-500 border border-gray-500
+                               transition-all duration-300 hover:bg-[#88ccb4]/20 hover:border-[#88ccb4] hover:-translate-y-0.5"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
             </div>
           </div>
         </MorphingDialogContent>
