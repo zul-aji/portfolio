@@ -12,7 +12,7 @@ export interface TimelineEntry {
 export function ExperienceData() {
   const data = [
     {
-      dateRange: "Oct 2024 - Present",
+      dateRange: "↗ Oct 2024 - Present",
       companyName: "Invencio Creative Tech",
       position: "- Software Developer",     
       description: "A freelance developer, collaborating with university peers to build custom websites and mobile applications for clients. My projects involve developing Android applications using Kotlin and Flutter, as well as creating web solutions with various JS Frameworks. This work focuses on implementing functional requirements, integrating APIs, and ensuring applications perform reliably across different platforms.",
@@ -28,7 +28,7 @@ export function ExperienceData() {
       ]
     },
     {
-      dateRange: "Oct 2023 - Oct 2024",
+      dateRange: "↗ Oct 2023 - Oct 2024",
       companyName: "Kamar Pelajar",
       position: "- Android Application Developer",      
       description: "A startup offering accommodation services through Indonesian students abroad, I worked as an Android Application Developer. My primary responsibilities included developing and maintaining mobile applications using Flutter, as well as integrating them with backend services built on Laravel. The work involved ensuring smooth functionality, implementing features, and maintaining the app to support the platform's operations.",
@@ -77,7 +77,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   {item.companyName}
                   <span className="text-base text-[#88ccb4] font-normal italic">{item.position}</span>
                 </h1>
-                <p className="mb-4 text-sm font-semibold text-gray-300 md:text-xl text-justify">
+                <p className="mb-4 text-sm font-medium text-gray-300 md:text-lg text-justify">
                   {item.description}
                 </p>
                 <div className="flex flex-wrap gap-3 mt-3">

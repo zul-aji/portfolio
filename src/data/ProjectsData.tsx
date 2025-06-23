@@ -234,7 +234,7 @@ export function ProjectsContainer({
           className='pointer-events-auto relative flex mx-5 my-2 sm:mx-35 lg:mx-75 h-[90vh] w-full flex-col overflow-hidden bg-gray-200'
         >
           {/* Close button - fixed on top */}
-          <MorphingDialogClose className='fixed rounded-md p-1 top-9 right-9 sm:top-6 sm:right-6 bg-gray-300 text-black sm:text-zinc-50 sm:bg-transparent z-30' />
+          <MorphingDialogClose className='fixed rounded-md p-1 top-9 right-9 sm:top-6 sm:right-6 bg-gray-300 text-[#17301C] sm:text-zinc-50 sm:bg-transparent z-30' />
 
           {/* Scrollable content including image */}
           <div className="flex-1 overflow-y-auto mb-5">
@@ -245,12 +245,12 @@ export function ProjectsContainer({
             />
             <div className='p-6'>
                 <div className="flex justify-between items-center mx-1 sm:mx-4 mb-3">
-                <MorphingDialogTitle className='text-2xl font-bold text-black'>
+                <MorphingDialogTitle className='text-2xl font-bold text-[#17301C]'>
                   {title}
                 </MorphingDialogTitle>
                 {link && linkHeader && (
                   <a
-                    className='text-black hover:text-[#88ccb4] transition-colors group'
+                    className='text-[#17301c] hover:text-[#88ccb4] transition-colors group'
                     href={link}
                     target='_blank'
                     rel='noopener noreferrer'
@@ -262,7 +262,7 @@ export function ProjectsContainer({
                   </a>
                 )}
                 </div>
-                <MorphingDialogSubtitle className='font-semibold text-zinc-600 mx-1 sm:mx-4'>
+                <MorphingDialogSubtitle className='font-semibold text-[#17301c] mx-1 sm:mx-4'>
                   {subtitle}
                 </MorphingDialogSubtitle>
                 <MorphingDialogDescription
@@ -274,7 +274,7 @@ export function ProjectsContainer({
                   }}
                 >
                   {description.map((paragraph, index) => (
-                    <p key={index} className='my-3 text-gray-500 text-justify mx-1 sm:mx-4'>
+                    <p key={index} className='my-3 font-normal text-[#17301C] text-justify mx-1 sm:mx-4'>
                     {paragraph}
                     </p>
                   ))}
@@ -283,7 +283,7 @@ export function ProjectsContainer({
                   {tools.map((tool, toolIndex) => (
                     <span
                       key={toolIndex}
-                      className="px-3 py-1 text-sm md:text-base rounded-full text-gray-500 border border-gray-500
+                      className="px-3 py-1 text-sm md:text-base rounded-full text-[#17301c] border border-[#17301c]
                                transition-all duration-300 hover:bg-[#88ccb4]/20 hover:border-[#88ccb4] hover:-translate-y-0.5"
                     >
                       {tool}

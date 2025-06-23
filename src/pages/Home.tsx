@@ -5,13 +5,16 @@ import AboutData from "@/data/AboutData";
 import { HeroData } from "@/data/HeroData";
 import React from "react";
 import { motion } from "framer-motion";
+import { HiMenu, HiX } from "react-icons/hi"; // Install react-icons if not already
+import ContactData from "@/data/ContactData";
 
 const SilkComp = React.lazy(() => import('../blocks/Backgrounds/Silk'));
 
-function Home () {
+function Home() {
     const [_, setActive] = useState(0);
     const [currentSection, setCurrentSection] = useState<string | null>(null);
-    const [showNavAndFooter, setShowNavAndFooter] = useState(false);
+    const [showNav, setShowNav] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
     const navItems = [
         // 'About',
         // 'Education',
@@ -21,16 +24,13 @@ function Home () {
         'About',
         'Experience',
         'Projects',
-    ];
-    const bottomLinks = [
-        { label: 'Email↗', href: 'mailto:zulfiqar.aji@gmail.com' },
-        { label: 'LinkedIn↗', href: 'https://www.linkedin.com/in/zul-aji/' },
-        { label: 'GitHub↗', href: 'https://github.com/zul-aji' }
+        'Contact'
     ];
 
     const aboutRef = useRef<HTMLDivElement>(null);
     const experienceRef = useRef<HTMLDivElement>(null);
     const projectRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     // intersection observer
@@ -53,12 +53,13 @@ function Home () {
         if (aboutRef.current) observer.observe(aboutRef.current);
         if (experienceRef.current) observer.observe(experienceRef.current);
         if (projectRef.current) observer.observe(projectRef.current);
+        if (contactRef.current) observer.observe(contactRef.current);
 
         return () => observer.disconnect();
     }, []);
 
     useEffect(() => {
-        const timer = setTimeout(() => setShowNavAndFooter(true), 1900);
+        const timer = setTimeout(() => setShowNav(true), 1900);
         return () => clearTimeout(timer);
     }, []);
 
@@ -79,6 +80,20 @@ function Home () {
                 top: projectRef.current.offsetTop,
                 behavior: 'smooth',
             });
+        } else if (idx === 3 && contactRef.current && scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({
+                top: contactRef.current.offsetTop,
+                behavior: 'smooth',
+            });
+        }
+    };
+
+    const handleScrollToContact = () => {
+        if (contactRef.current && scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({
+                top: contactRef.current.offsetTop,
+                behavior: 'smooth',
+            });
         }
     };
 
@@ -88,85 +103,101 @@ function Home () {
             <div className="fixed inset-0 w-full h-full z-0">
                 <SilkComp
                     speed={3}
-                    scale={0.5}
-                    color="#88CCB4"
+                    scale={0.6}
+                    color="#18BB82"
                     noiseIntensity={2.5}
                     rotation={0}
                 />
             </div>
 
-            {/* Top nav section */}
-            {showNavAndFooter && (
+            {/* Top nav section - hidden on mobile */}
+            {showNav && (
             <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: showNavAndFooter ? 1 : 0 }}
+                animate={{ opacity: showNav ? 1 : 0 }}
                 transition={{ duration: 0.8 }}
-                className="fixed top-0 left-0 w-full z-20 flex justify-center pt-4 md:pt-8 pointer-events-none"
+                className="fixed top-0 left-0 w-full z-20  justify-center pt-4 md:pt-8 pointer-events-none hidden sm:flex"
             >
                 <div
-                  className={"pointer-events-auto py-2 md:py-3 transition-colors bg-gray-300/10 backdrop-blur-xs rounded-full"}
+                  className={`pointer-events-auto py-2 md:py-3 transition-colors ${
+                    currentSection !== 'hero'
+                      ? 'bg-gray-300/10 backdrop-blur-sm rounded-full'
+                      : ''
+                  }`}
                 >
-                  <nav className="flex flex-row gap-4 md:gap-10 px-4 md:px-8">
-                    {navItems.map((item, idx) => (
-                      <button
-                        key={item}
-                        onClick={() => handleNavClick(idx)}
-                        className={`text-sm md:text-xl transition-colors font-medium focus:outline-none bg-transparent border-none shadow-none p-0 m-0 text-white hover:text-[#88ccb4] flex items-center`}
-                        style={{ background: 'none', border: 'none', boxShadow: 'none' }}
-                      >
-                        <span
-                          className="mr-2 transition-opacity duration-250"
-                          style={{
-                            opacity:
-                              (idx === 0 && currentSection === 'about') ||
-                              (idx === 1 && currentSection === 'experience') ||
-                              (idx === 2 && currentSection === 'projects')
-                                ? 1
-                                : 0,
-                          }}
+                    <nav className="flex flex-row gap-4 md:gap-10 px-4 md:px-8">
+                        {navItems.map((item, idx) => (
+                        <button
+                            key={item}
+                            onClick={() => handleNavClick(idx)}
+                            className={`text-sm md:text-xl transition-colors font-semibold focus:outline-none bg-transparent border-none shadow-none p-0 m-0 text-white hover:text-[#88ccb4] flex items-center`}
+                            style={{ background: 'none', border: 'none', boxShadow: 'none' }}
                         >
-                          •
-                        </span>
-                        {item}
-                      </button>
-                    ))}
-                  </nav>
+                            <span
+                            className="mr-2 transition-opacity duration-250"
+                            style={{
+                                opacity:
+                                (idx === 0 && currentSection === 'about') ||
+                                (idx === 1 && currentSection === 'experience') ||
+                                (idx === 2 && currentSection === 'projects') ||
+                                (idx === 3 && currentSection === 'contact')
+                                    ? 1
+                                    : 0,
+                            }}
+                            >
+                            •
+                            </span>
+                            {item}
+                        </button>
+                        ))}
+                    </nav>
                 </div>
             </motion.div>
             )}
 
-            {/* Bottom section, fixed */}
-            {showNavAndFooter && (
-            <motion.div
+            
+
+            {/* Hamburger menu for mobile */}
+            {showNav && (
+            <motion.div 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: showNavAndFooter ? 1 : 0 }}
+                animate={{ opacity: showNav ? 1 : 0 }}
                 transition={{ duration: 0.8 }}
-                className="fixed bottom-0 left-0 w-full z-20 flex justify-center pb-4 md:pb-8 pointer-events-none"
+                className="fixed top-4 right-4 z-30 sm:hidden"
             >
-              <div
-                className={"pointer-events-auto flex gap-4 md:gap-8 px-4 md:px-8 py-2 md:py-3 transition-colors bg-gray-300/10 backdrop-blur-xs rounded-full" }
-              >
-                {bottomLinks.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 hover:text-[#88ccb4] transition-colors text-sm md:text-base group"
-                  >
-                    {item.label.slice(0, -1)}
-                    <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                      ↗
-                    </span>
-                  </a>
-                ))}
-              </div>
+                <button
+                    onClick={() => setMenuOpen((prev) => !prev)}
+                    className="bg-[#17301C]/70 p-2 rounded-full text-white focus:outline-none"
+                    aria-label="Open menu"
+                >
+                    {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+                </button>
             </motion.div>
+            )}
+
+            {/* Dropdown menu for mobile */}
+            {menuOpen && (
+                <div className="fixed inset-0 z-40 bg-[#17301C]/80 flex flex-col items-center justify-center sm:hidden">
+                    <nav className="flex flex-col gap-6 text-2xl text-white font-semibold mb-8">
+                        {navItems.map((item, idx) => (
+                            <button
+                                key={item}
+                                onClick={() => {
+                                    handleNavClick(idx);
+                                    setMenuOpen(false);
+                                }}
+                                className="hover:text-[#88ccb4] transition-colors"
+                            >
+                                {item}
+                            </button>
+                        ))}
+                    </nav>
+                </div>
             )}
 
             {/* Scrollable content area */}
             <div 
-                ref={scrollContainerRef} data-section="hero" className="relative z-10 flex flex-col justify-start min-h-screen h-screen overflow-y-auto overflow-x-hidden scroll-smooth pb-24"
+                ref={scrollContainerRef} className="relative z-10 flex flex-col justify-start min-h-screen h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
             >
              
                 {/* Hero section */}
@@ -178,9 +209,9 @@ function Home () {
                 <div
                     ref={aboutRef}
                     data-section="about"
-                    className="flex flex-col items-center justify-center min-h-screen h-screen shrink-0 px-4 md:px-8"
-                >                    
-                    <AboutData/>
+                    className="flex flex-col items-stretch md:items-center justify-center min-h-screen shrink-0 px-5 pt-10 sm:pt-30 pb-24"
+                >
+                    <AboutData onContactClick={handleScrollToContact} />
                 </div>
 
                 {/* Experience section */}
@@ -208,6 +239,15 @@ function Home () {
                             />
                         ))}
                     </div>
+                </div>
+
+                {/* Contact section */}
+                <div
+                    ref={contactRef}
+                    data-section="contact"
+                    className="min-h-screen w-screen px-10 pt-20 sm:pt-15 pb-10"
+                >
+                    <ContactData/>
                 </div>
             </div>
         </div>
