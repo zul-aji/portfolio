@@ -16,11 +16,6 @@ function Home() {
     const [showNav, setShowNav] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const navItems = [
-        // 'About',
-        // 'Education',
-        // 'Experience',
-        // 'Projects',
-        // 'Tools',
         'About',
         'Experience',
         'Projects',
@@ -178,6 +173,14 @@ function Home() {
             {/* Dropdown menu for mobile */}
             {menuOpen && (
                 <div className="fixed inset-0 z-40 bg-[#17301C]/80 flex flex-col items-center justify-center sm:hidden">
+                    {/* X button inside the overlay, top right */}
+                    <button
+                        onClick={() => setMenuOpen(false)}
+                        className="absolute top-4 right-4 bg-[#17301C]/90 p-2 rounded-full text-white focus:outline-none z-50"
+                        aria-label="Close menu"
+                    >
+                        <HiX size={28} />
+                    </button>
                     <nav className="flex flex-col gap-6 text-2xl text-white font-semibold mb-8">
                         {navItems.map((item, idx) => (
                             <button
@@ -245,7 +248,7 @@ function Home() {
                 <div
                     ref={contactRef}
                     data-section="contact"
-                    className="h-auto sm:min-h-screen w-screen px-10 pt-20 sm:pt-15 pb-10"
+                    className="h-auto lg:min-h-screen w-screen px-10 pt-20 sm:pt-15 pb-10"
                 >
                     <ContactData/>
                 </div>

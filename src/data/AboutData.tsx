@@ -132,7 +132,7 @@ function AboutData({ onContactClick }: AboutDataProps) {
                     className="mt-5 md:mt-8 px-3 md:px-6 py-2 rounded-full border-3 border-white hover:border-[#6bb39e] text-white hover:text-black font-semibold text-sm sm:text-lg hover:bg-[#6bb39e] transition-colors group flex items-center gap-2"
                 >
                     <span className="transition-all duration-500 hover:-translate-y-0.5 group-hover:rotate-90">▸</span>
-                    <span className="mx-1">Let's get in touch!</span>
+                    <span className="mx-1">Get in touch!</span>
                     <span className="transition-all duration-500 group-hover:-rotate-90">◂</span>
                 </button>
             </div>
