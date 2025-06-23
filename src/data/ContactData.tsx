@@ -1,8 +1,8 @@
 function ContactData() {
     return (
         <div className="relative flex flex-col items-center justify-center shrink-0 w-full h-full rounded-4xl bg-[#17301C]/50 backdrop-blur-sm">
-            <div className="flex-1 flex flex-col items-center justify-center w-full">
-                <p className="text-3xl sm:text-5xl md:text-8xl text-white text-center px-8 sm:px-20 lg:px-50">
+            <div className="flex-1 flex flex-col items-center justify-center w-full py-10 px-8 sm:px-20 lg:px-50">
+                <p className="text-3xl sm:text-5xl md:text-8xl text-white text-center">
                     Let's have a{' '}
                     <a
                         href="mailto:zulfiqar.aji@gmail.com"
@@ -17,7 +17,7 @@ function ContactData() {
                     </a>
                     ,{' '}
                 </p>
-                <p className="text-3xl sm:text-5xl md:text-8xl text-white text-center px-5 sm:px-20 lg:px-50">
+                <p className="text-3xl sm:text-5xl md:text-8xl text-white text-center">
                     <a
                         href="https://www.linkedin.com/in/zul-aji/"
                         target="_blank"
@@ -31,7 +31,7 @@ function ContactData() {
                     </a>
                     {' '}with me,
                 </p>
-                <p className="text-3xl sm:text-5xl md:text-8xl text-white text-center px-5 sm:px-20 lg:px-50">
+                <p className="text-3xl sm:text-5xl md:text-8xl text-white text-center">
                     or{' '}
                     <a
                         href="https://github.com/zul-aji"

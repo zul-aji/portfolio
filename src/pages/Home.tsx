@@ -245,7 +245,7 @@ function Home() {
                 <div
                     ref={contactRef}
                     data-section="contact"
-                    className="min-h-screen w-screen px-10 pt-20 sm:pt-15 pb-10"
+                    className="h-auto sm:min-h-screen w-screen px-10 pt-20 sm:pt-15 pb-10"
                 >
                     <ContactData/>
                 </div>
