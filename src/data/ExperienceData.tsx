@@ -12,19 +12,47 @@ export interface TimelineEntry {
 export function ExperienceData() {
   const data = [
     {
+      dateRange: "↗ Nov 2025 - Present",
+      companyName: "LG Sinar Mas",
+      position: "- IT Systems Engineer",
+      description: "Supporting and monitoring smart factory systems for EV battery production across global manufacturing sites. My work involves analyzing system and machine data to detect issues, performing root-cause analysis, and collaborating with operations teams to translate production problems into technical solutions that improve system reliability and operational efficiency.",
+      tools: [
+        "System Monitoring",
+        "Data Analysis",
+        "Root Cause Analysis",
+        "SQL",
+        "Manufacturing Systems",
+        "Technical Troubleshooting"
+      ]
+    },
+    {
       dateRange: "↗ Oct 2024 - Present",
       companyName: "Invencio Creative Tech",
-      position: "- Software Developer",     
-      description: "A freelance developer, collaborating with university peers to build custom websites and mobile applications for clients. My projects involve developing Android applications using Kotlin and Flutter, as well as creating web solutions with various JS Frameworks. This work focuses on implementing functional requirements, integrating APIs, and ensuring applications perform reliably across different platforms.",
+      position: "- Business Analyst / Software Developer",
+      description: "Working remotely to translate business goals into technical requirements and actionable development tasks. I collaborate closely with developers and stakeholders to iterate product features based on user feedback and usage patterns while supporting delivery across SDLC phases to ensure alignment between business, UX, and engineering.",
       tools: [
         "React",
-        "Javascript",
+        "JavaScript",
         "TypeScript",
         "Flutter",
-        "Dart",
-        "Kotlin",
-        "Jetpack Compose",
         "REST API",
+        "Jira",
+        "Figma",
+        "Agile"
+      ]
+    },
+    {
+      dateRange: "↗ Aug 2025 - Oct 2025",
+      companyName: "Asuransi Astra Buana",
+      position: "- IT Business Alignment",
+      description: "Bridged communication between business stakeholders and IT teams to clarify requirements, assess system impacts, and support project execution. Contributed to projects using Agile and Waterfall methodologies while producing documentation, requirement analysis, and progress reports for internal stakeholders and management.",
+      tools: [
+        "Requirement Analysis",
+        "Stakeholder Communication",
+        "Agile",
+        "Waterfall",
+        "Jira",
+        "Documentation"
       ]
     },
     {
