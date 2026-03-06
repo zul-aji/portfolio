@@ -99,7 +99,7 @@ function Home() {
                 <SilkComp
                     speed={3}
                     scale={0.6}
-                    color="#18BB82"
+                    color="#157d59"
                     noiseIntensity={2.5}
                     rotation={0}
                 />

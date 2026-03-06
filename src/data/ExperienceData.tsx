@@ -58,7 +58,7 @@ export function ExperienceData() {
     {
       dateRange: "↗ Oct 2023 - Oct 2024",
       companyName: "Kamar Pelajar",
-      position: "- Android Application Developer",      
+      position: "- Android Developer",      
       description: "A startup offering accommodation services through Indonesian students abroad, I worked as an Android Application Developer. My primary responsibilities included developing and maintaining mobile applications using Flutter, as well as integrating them with backend services built on Laravel. The work involved ensuring smooth functionality, implementing features, and maintaining the app to support the platform's operations.",
       tools: [
         "Flutter",
