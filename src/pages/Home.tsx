@@ -234,13 +234,15 @@ function Home() {
                     data-section="projects"
                     className="flex flex-col items-center justify-start min-h-screen shrink-0 py-20 sm:py-33"
                 >
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl mx-auto px-6 md:px-10">
-                        {projectsData.map((project, index) => (
-                            <ProjectsContainer
-                            key={index}
-                            {...project}
-                            />
-                        ))}
+                    <div className="w-full max-w-7xl mx-auto px-6 md:px-10 flex justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                            {projectsData.map((project, index) => (
+                                <ProjectsContainer
+                                key={index}
+                                {...project}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
 

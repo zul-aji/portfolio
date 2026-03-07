@@ -34,155 +34,83 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    image: getProjectImage('projects-angkasapp') || '/placeholder.jpg',
-    title: "AngkasApp",
-    subtitle: "An android application for navigation in Soekarno-Hatta Airport",
+    image: getProjectImage('projects-lungoweb') || '/placeholder.jpg',
+    title: '"Lungo" Web Admin',
+    subtitle: "Merchant management and onboarding system",
     description: [
-      "As my bachelor's thesis project at Tomsk State University, I developed an Android application focused on solving navigation challenges in dynamic airport environments. The project began as a personal challenge to implement pathfinding algorithms—a domain I had little prior experience in—while accounting for frequently changing layouts like Soekarno-Hatta International Airport's terminal structures. Without existing dataset, I designed the system to be easily reconfigurable for layout updates, ensuring long-term usability. Recognizing that navigation alone wouldn’t fully address travelers’ needs, I expanded the scope to integrate flight management features.",
-      "The application offers two core functionalities that address different aspects of airport navigation. First, it provides step-by-step indoor navigation where users can select starting points and destinations, with zoomable maps for better orientation in complex terminal spaces. Second, it integrates flight management features including real-time flight searches by IATA code, complete schedules for arrivals and departures at Soekarno-Hatta, and customizable flight reminders. These combined features create a seamless experience where passengers can navigate terminals while staying informed about their flights, all within a single application.",
-      "For the technical implementation, I selected the A* pathfinding algorithm for its efficiency and its grid-based nature that is easy to be reconfigured for often layout changes. The application was built using Flutter and Dart to ensure cross-platform compatibility from the start. Flight data is pulled in real-time through integration with the Airlabs API, the MVVM architecture was chosen to maintain clean separation of concerns and improve long-term maintainability, and HiveBox plugin for local storage. This project represents my ability to transform academic research into practical solutions while addressing real-world usability challenges.",
+      "Developed as part of the Lungo travel platform ecosystem, this web admin portal was designed to support the operational management of merchants joining the platform. The project focused on translating operational needs into a structured system that could efficiently handle merchant onboarding, evaluation, and lifecycle tracking.",
+      
+      "Working closely with product and development teams, I helped define workflows for merchant registration, verification, and subscription management. The portal organizes merchants into multiple operational states including pending review, active merchants, rejected applications, expired subscriptions, and potential prospects, enabling administrators to track the entire merchant pipeline from discovery to activation.",
+      
+      "The system was designed to support operational decision-making by providing clear merchant profiles, structured data visibility, and centralized management tools. This project demonstrates my ability to translate business processes into scalable technical systems that support platform growth."
     ],
     tools: [
-        "Flutter",
-        "Dart",
-        "HiveBox",
-        "A* algorithm",
-        "AirLabs API",
-        "MVVM"
-      ],
-    link: "https://github.com/zul-aji/AngkasApp",
-    linkHeader: "Github Repo↗"
+      "React",
+      "JavaScript",
+      "REST API",
+      "Axios",
+      "JWT"
+    ]
+  },
+  {
+    image: getProjectImage('projects-lungoapp') || '/placeholder.jpg',
+    title: '"Lungo" Travel Planning App',
+    subtitle: "Itinerary planning and merchant marketplace platform",
+    description: [
+      "Developed during my work with Invencio Creative Tech, this mobile application was designed to simplify travel planning by connecting tourists with local businesses while enabling structured itinerary creation.",
+      
+      "The platform supports two primary stakeholders: merchants and travelers. Merchants can onboard their businesses by submitting service details, facilities, schedules, and media assets, while travelers can create personalized travel itineraries by selecting services across accommodations, transportation, culinary experiences, and activities.",
+      
+      "My role involved translating product requirements into functional features, structuring user flows for both merchant and traveler experiences, and ensuring the system could scale to support additional cities in the future."
+    ],
+    tools: [
+      "Flutter",
+      "Dart",
+      "Google Maps API",
+      "REST API",
+      "Third Party Login"
+    ]
   },
   {
     image: getProjectImage('projects-youmart') || '/placeholder.jpg',
     title: "YouMart",
-    subtitle: "An android application for a local convenience store in Malaysia",
+    subtitle: "Digital ordering system for a dormitory convenience store",
     description: [
-      "During my studies at Universiti Teknologi Malaysia, I collaborated with a team to develop YouMart, an Android application designed to address a real-world problem faced by students at our dormitory’s convenience store. The store had unpredictable operating hours, and even when open, stock availability was inconsistent—making it frustrating for students who needed quick access to essentials. As part of a course project, we partnered with the store as stakeholders to create a digital solution that would bring transparency and convenience to both customers and the store owner.",
-      "The app serves two user roles: customers and the store owner. For customers, it provides real-time updates on store status (open/closed) and live inventory, eliminating the need for physical checks. Users can browse available items, place orders for pickup, and view their order history—with the option to reorder past purchases seamlessly. Guest login is supported, though order history is restricted to registered accounts. On the admin side, the store owner can manage inventory (add/update/remove items), adjust opening hours, and monitor incoming orders—all through an intuitive interface. The order feature reduces in-store browsing time, streamlining operations for both parties.",
-      "Built with Flutter and Dart, the app leverages GetX for state management and follows an MVC architecture for scalability. Firebase Firestore powers the user authentication process and real-time database, ensuring instant updates for inventory and store status—a critical feature for reliability. The project was a hands-on lesson in solving tangible problems with user-centric design and efficient technical execution."
+      "Developed during my studies at Universiti Teknologi Malaysia, YouMart was created to solve a real operational issue faced by a local dormitory convenience store: inconsistent opening hours and lack of visibility into available inventory.",
+      
+      "Our team collaborated directly with the store owner to understand operational challenges and translate them into a digital solution that improved transparency for customers while simplifying store management.",
+      
+      "The resulting system enables customers to check real-time store status, browse available items, and place pickup orders, while the store owner can manage inventory, update operating hours, and monitor incoming orders. This project demonstrates practical stakeholder collaboration and translating business problems into digital solutions."
     ],
     tools: [
-        "Flutter",
-        "Dart",
-        "GetX",
-        "Firebase Firestore",
-        "MVC"
-      ],
+      "Flutter",
+      "Dart",
+      "Firebase Firestore",
+      "GetX"
+    ],
     link: "https://github.com/zul-aji/youmart_mobitech",
     linkHeader: "Github Repo↗"
   },
   {
-    image: getProjectImage('projects-lungoapp') || '/placeholder.jpg',
-    title: '"Lungo" Android Application',
-    subtitle: "An itinerary android application for travel planning",
+    image: getProjectImage('projects-angkasapp') || '/placeholder.jpg',
+    title: "AngkasApp",
+    subtitle: "Indoor navigation and flight management application",
     description: [
-      "During my freelance work with Invencio Creative Tech, I collaborated on developing a travel itinerary application designed to streamline trip planning for visitors to Surabaya. The project aimed to solve the challenge of organizing travel schedules by connecting tourists with local businesses while providing a structured way to plan their entire trip—from accommodations to activities.",
-      "The app serves two key user groups: merchants and travelers. Merchants can register their businesses (lodging, vehicle rentals, culinary spots, or excursions) with detailed profiles, including facilities, operating hours, photos, and descriptions. Travelers, after setting their arrival/departure dates, can build personalized itineraries by adding merchant services at specific times. The app also provides business details, past travel history tracking, and user account management—creating a seamless end-to-end travel planning experience.",
-      "Built with Flutter and Dart, the app integrates Google Maps API for location services, SharedPreferences for local storage, and a custom backend API. Third-party login (Google/Apple) simplifies user onboarding. While currently focused on Surabaya, the architecture is designed for easy expansion to other cities, demonstrating scalable development practices."
+      "Developed as my bachelor's thesis project at Tomsk State University, AngkasApp addresses the challenge of navigating complex airport environments such as Soekarno-Hatta International Airport.",
+      
+      "The project began with researching how passengers navigate dynamic airport layouts where terminals in soekarno-hatta that changes frequently. To address this, I designed a navigation system capable of adapting to layout updates while maintaining accurate route guidance.",
+      
+      "Beyond navigation, the product scope expanded to include integrated flight management features such as real-time flight searches, arrival and departure schedules, and personalized flight reminders. The project demonstrates my ability to identify user needs, expand product scope strategically, and design solutions that improve overall traveler experience."
     ],
     tools: [
-        "Flutter",
-        "Dart",
-        "Google Maps API",
-        "Third Party login"
-      ],
-  },
-  {
-    image: getProjectImage('projects-movieapp') || '/placeholder.jpg',
-    title: "Movie Catalog",
-    subtitle: "A Movie Catalog Application with Kotlin",
-    description: [
-      "During my studies at Tomsk State University, I developed MovieConnect as part of an academic coursework project. The goal was to create a platform where film enthusiasts could easily discover movies while seeing authentic community reactions—solving the common challenge of finding reliable audience opinions before watching a film.",
-      "The app combines essential user account management with comprehensive movie exploration. Users can securely register, log in, and manage their profiles while browsing an extensive movie catalog. Each film displays its average community rating, helping users quickly gauge popularity. The detailed movie screen goes further, offering complete information alongside user reviews—where anyone can contribute ratings (on a 10-point scale) and written feedback, either publicly or anonymously. To personalize the experience, users can save favorites to their own curated lists for quick access later.",
-      "Built with Kotlin and XML in Android Studio, the application follows MVVM architecture for clean code organization and maintainability. SharedPreferences handles secure local storage of user tokens, ensuring persistent sessions. This project demonstrated my ability to transform academic requirements into a functional, user-friendly product with real-world utility."
+      "Flutter",
+      "Dart",
+      "A* Algorithm",
+      "AirLabs API",
+      "HiveBox",
+      "MVVM"
     ],
-    tools: [
-        "Kotlin",
-        "XML",
-        "Android Studio",
-        "REST API",
-        "MVVM"
-      ],
-    link: "https://github.com/zul-aji/Movie-Catalog",
-    linkHeader: "Github Repo↗"
-  },
-  {
-    image: getProjectImage('projects-tsuedu') || '/placeholder.jpg',
-    title: "TSU Educational Portal",
-    subtitle: "TSU Educational Portal Android Application",
-    description: [
-      "As part of my coursework at Tomsk State University (TSU), I developed an academic portal application designed to streamline access to educational information. The project addressed the university's need for a centralized platform where students could view their academic details while giving administrators efficient tools to manage this information.",
-      "The application features secure authentication (login/logout/password management) with distinct interfaces for students and administrators. Students can access their personalized academic dashboard containing class schedules, faculty information, study groups, and course details. For administrators, the system provides comprehensive CRUD functionality - enabling them to update academic records, modify course information, and approve new student account registrations through an intuitive management interface.",
-      "Built with Kotlin and XML using Android Studio, the application delivers a responsive native Android experience. The clean architecture ensures reliable performance for both information retrieval and administrative updates, demonstrating my ability to create practical solutions for institutional needs."
-    ],
-    tools: [
-        "Kotlin",
-        "XML",
-        "Android Studio",
-        "REST API",
-        "Clean Architecture"
-      ],
-    link: "https://github.com/zul-aji/TSU-Educational-Portal",
-    linkHeader: "Github Repo↗"
-  },
-  {
-    image: getProjectImage('projects-lungoweb') || '/placeholder.jpg',
-    title: '"Lungo" Web Admin',
-    subtitle: "A merchant management system for the Lungo application",
-    description: [
-      "Developed as part of the Lungo application ecosystem, this admin portal provides comprehensive merchant management capabilities for the platform's growing network. The web solution enables efficient oversight of all merchant lifecycle stages, from initial registration to active participation and subscription management, addressing the critical need for centralized business partner administration.",
-      "The portal features six organized merchant lists to streamline operations. The review list allows admins to evaluate new applicant registrations with approve/reject functionality. Active merchants are tracked with subscription expiry monitoring, while separate lists maintain records of rejected applications and expired subscriptions for reference. The system also incorporates potential merchant discovery through a scraped prospects list from web data and a join-later list for deferred onboarding candidates. Across all lists, admins can access complete merchant profiles matching app data for informed decision-making.",
-      "Built with React.js and JavaScript, the solution implements Axios for API integration and JWT for secure authentication. This technology combination delivers a responsive admin interface that effectively supports Lungo's merchant vetting and management processes at scale.",
-    ],
-    tools: [
-        "React",
-        "JavaScript",
-        "Axios",
-        "JWT",
-        "REST API",
-      ],
-  },
-  {
-    image: getProjectImage('projects-medapi') || '/placeholder.jpg',
-    title: "Medical Information API",
-    subtitle: "Medical Information System using .Net",
-    description: [
-      "Developed as academic coursework at Tomsk State University, this project created a secure API for doctors to manage and collaborate on patient medical records. The system was designed to address the need for organized digital record-keeping while enabling professional consultation among specialists - replacing fragmented paper-based documentation with a centralized digital solution.",
-      "The API handles three core entities: patient data, doctor profiles, and consultation records. Doctors can store comprehensive patient information and create detailed consultation records including anamnesis, diagnoses, treatment plans, and follow-up requirements. A unique collaborative feature allows doctors within the same specialty to comment on cases - enabling peer review of diagnoses, treatment approaches, or general case discussion through threaded conversations. This creates a knowledge-sharing ecosystem while maintaining complete patient history documentation.",
-      "Built with C# and .NET Framework in Visual Studio, the API implements professional-grade technologies: JWT for secure authentication, Entity Framework Core for database operations, and Microsoft SQL Server Management for reliable data storage. Swagger documentation ensures easy integration for frontend developers. This project demonstrated my ability to create secure, professional systems that meet strict healthcare data requirements."
-    ],
-    tools: [
-        ".Net",
-        "C#",
-        "Visual Studio",
-        "Entity Framework Core",
-        "JWT",
-        "Microsoft SQL Server Management",
-        "Swagger"
-      ],
-    link: "https://github.com/zul-aji/Medical-Information-System-API",
-    linkHeader: "Github Repo↗"
-  },
-  {
-    image: getProjectImage('projects-foodapi') || '/placeholder.jpg',
-    title: "Food Delivery API",
-    subtitle: "Food Delivery System using .Net",
-    description: [
-      "Developed as academic coursework at Tomsk State University, this project created a robust API to help traditional food establishments transition to online ordering. The system addresses the growing need for small food businesses to compete in the digital marketplace by providing them with essential e-commerce capabilities without requiring complex infrastructure.",
-      "The API enables customers to browse restaurant menus, view dish details and ratings, and compile orders through a digital basket system. Users benefit from standard authentication features (registration, login, profile management) alongside intuitive ordering functionality - they can modify basket contents, review selections, and finalize purchases. Restaurant owners receive real-time order notifications and can update order statuses throughout the fulfillment process, creating a seamless workflow from order placement to delivery.",
-      "Built with C# and .NET Framework in Visual Studio, the API employs professional development tools including JWT for secure authentication, Entity Framework Core for database operations, and Microsoft SQL Server Management for reliable data storage. The integration of Swagger documentation ensures easy adoption by frontend developers, making this a complete solution for food businesses entering the digital space."
-    ],
-    tools: [
-        ".Net",
-        "C#",
-        "Visual Studio",
-        "Entity Framework Core",
-        "JWT",
-        "Microsoft SQL Server Management",
-        "Swagger"
-      ],
-    link: "https://github.com/zul-aji/Food-Delivery-API",
+    link: "https://github.com/zul-aji/AngkasApp",
     linkHeader: "Github Repo↗"
   },
 ];
@@ -256,7 +184,7 @@ export function ProjectsContainer({
                     rel='noopener noreferrer'
                   >
                   {linkHeader.slice(0, -1)}
-                  <span className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  <span className="inline-block transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                     ↗
                   </span>
                   </a>
@@ -284,7 +212,7 @@ export function ProjectsContainer({
                     <span
                       key={toolIndex}
                       className="px-3 py-1 text-sm md:text-base rounded-full text-[#17301c] border border-[#17301c]
-                               transition-all duration-300 hover:bg-[#88ccb4]/20 hover:border-[#88ccb4] hover:-translate-y-0.5"
+                               transition-all duration-500 hover:bg-[#88ccb4]/20 hover:border-[#88ccb4] hover:-translate-y-0.5"
                     >
                       {tool}
                     </span>
